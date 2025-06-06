@@ -1,3 +1,5 @@
+import MenuItems from "./components/MenuItems"
+import { menuItems } from "./data/db"
 
 
 function App() {
@@ -11,6 +13,15 @@ function App() {
       <main className="max-w-7xl mx-auto grid md:grid-cols-2 py-10">
           <div>
               <h2 className="text-2xl text-center font-bold">Menú</h2>
+                  <div className="space-y-3 mt-10">
+                    {menuItems.map(item => (
+                      <MenuItems 
+                      key={item.id}
+                      item={item}
+                      />
+                    ))}
+                  </div>
+                
           </div>
           <div>
               <h2 className="text-2xl text-center font-bold">Consumo</h2>
