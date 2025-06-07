@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+💰 Calculadora de Propinas y Consumo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una calculadora de propinas interactiva que también permite gestionar los productos consumidos en un establecimiento, calculando el subtotal, la propina y el total final.
 
-Currently, two official plugins are available:
+⚙️ Tecnologías Utilizadas
+Desarrollada con React, TypeScript y Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 ¡Explora el Proyecto!
 
-## Expanding the ESLint configuration
+👉 https://glowing-bavarois-e86f6c.netlify.app/ 👈
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✨ Características Principales
+En esta primera versión, me he enfocado en la lógica central de la calculadora y la gestión de ítems del menú, haciendo uso eficiente de las herramientas de React:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+📝 Gestión Dinámica del Menú: El menú de productos se carga dinámicamente desde un archivo db local, facilitando la adición o modificación de ítems.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+➕➖ Añadir/Eliminar Consumos: Agrega productos del menú al "consumo" y elimínalos fácilmente.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+💡 Cálculo de Propinas Inteligente:
+Selecciona un porcentaje de propina (10%, 20%, 50%) para calcularla automáticamente.
+Muestra el subtotal, el monto de la propina y el total final a pagar.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+🔄 Manejo del Estado con React Hooks:
+useState: Para gestionar el estado local de los ítems del menú, el consumo actual, el porcentaje de propina seleccionado y los cálculos.
+useMemo: Utilizado para optimizar el rendimiento de los cálculos (subtotal, propina, total) memoizando los valores y evitando recálculos innecesarios.
+
+🛠️ Custom Hooks: La lógica central de la aplicación, incluyendo la gestión del consumo y los cálculos, está encapsulada en un hook personalizado. Esto fomenta la reutilización de código, mejora la legibilidad y simplifica la mantenibilidad de los componentes.
+
+🛡️ Tipado Estricto con TypeScript: Todo el proyecto está completamente tipado con TypeScript, lo que asegura la robustez del código, mejora la experiencia del desarrollador y previene errores comunes en tiempo de desarrollo.
+
+💰 Formateo de Cantidades: Utilización de Intl.NumberFormat dentro de una función helper para asegurar un formato de moneda consistente y legible en toda la aplicación.
+
+🎨 Estilizado con Tailwind CSS: Interfaz de usuario construida con el framework de CSS de utilidad, lo que permite un desarrollo rápido y un diseño adaptable.
+
+💻 Cómo Ejecutar el Proyecto Localmente
+
+npm install
+npm run dev
+
+El proyecto se abrirá automáticamente en tu navegador en http://localhost:5173 (o un puerto similar).
+
+💡 Próximas Funcionalidades
+Este proyecto está en constante evolución. En futuras versiones, planeo agregar funcionalidades para mejorar la experiencia del usuario y expandir sus capacidades
+
+🧑‍💻 Conéctate Conmigo
+¡Gracias por visitar mi proyecto! Estoy activamente buscando oportunidad en el mundo del desarrollo web y me entusiasma aprender y contribuir. Si tienes alguna pregunta, comentario o una oportunidad interesante, no dudes en contactarme:
+
+GitHub: https://github.com/luisgoweb
+LinkedIn: https://www.linkedin.com/in/luis-gonzalez-dev-full-stack/
+Correo Electrónico: luisgocodev@gmail.com
