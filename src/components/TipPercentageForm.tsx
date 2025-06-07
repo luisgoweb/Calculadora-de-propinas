@@ -18,9 +18,10 @@ const tipOptions = [
 
   type TipPercentageFormProps = {
     setTip: React.Dispatch<React.SetStateAction<number>>
+    tip: number
   }
 
-const TipPercentageForm = ({setTip}: TipPercentageFormProps) => {
+const TipPercentageForm = ({tip, setTip}: TipPercentageFormProps) => {
   return (
     <div>
         <div>
@@ -36,6 +37,7 @@ const TipPercentageForm = ({setTip}: TipPercentageFormProps) => {
                       name="tip"
                       value={tips.value}
                       onChange={e => setTip(+e.target.value)}
+                      checked={tips.value === tip}
                       />
                   </div>
                 ))}
