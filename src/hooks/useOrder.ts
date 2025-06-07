@@ -13,13 +13,16 @@ export const useOrder = ()=>{
         }else{
             const newItem = {...item, quantity: 1}
             setOrder([...order, newItem])
-        }
-
-        
+        } 
     }
+
+    const deleteItem = (id: MenuItem['id'])=>{
+        setOrder(prevOrder => prevOrder.filter(item => item.id !== id))
+    }   
 
     return{
         order,
-        addItem
+        addItem,
+        deleteItem
     }
 }

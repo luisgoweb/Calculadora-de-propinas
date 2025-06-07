@@ -2,9 +2,10 @@ import type { OrderItem } from "../types"
 
 type OrderContentsProps = {
     order: OrderItem[]
+    deleteItem: (id: MenuItem["id"]) => void
 }
 
-const OrderContents = ({order}: OrderContentsProps) => {
+const OrderContents = ({order, deleteItem}: OrderContentsProps) => {
   return (
     
         <div>
@@ -17,7 +18,9 @@ const OrderContents = ({order}: OrderContentsProps) => {
                                 <p>{item.name} - <span className="font-bold">${item.price}</span></p>
                                 <p>Cantidad: {item.quantity} </p>
                             </div>
-                            <button className="bg-red-600 hover:bg-red-900 text-white p-3  cursor-pointer rounded-md">
+                            <button className="bg-red-600 hover:bg-red-900 text-white p-3  cursor-pointer rounded-md"
+                            onClick={()=> deleteItem(item.id)}
+                            >
                                 Eliminar
                             </button>
                           
