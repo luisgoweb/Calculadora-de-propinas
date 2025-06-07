@@ -7,7 +7,7 @@ import { useOrder } from "./hooks/useOrder"
 
 function App() {
 
-    const{ order, addItem, deleteItem } = useOrder()
+    const{ order, tip, setTip, addItem, deleteItem } = useOrder()
 
   return (
     <>
@@ -35,10 +35,13 @@ function App() {
               deleteItem={deleteItem}
               />
 
-              <TipPercentageForm />
+              <TipPercentageForm 
+              setTip={setTip}
+              />
 
               <OrderTotals 
               order={order}
+              tip={tip}
               />
               
           </div>
