@@ -1,11 +1,13 @@
-import type { MenuItem, OrderItem } from "../types"
+import type { Dispatch } from "react"
+import type { OrderActions } from "../reducers/order-reducer"
+import type { OrderItem } from "../types"
 
 type OrderContentsProps = {
     order: OrderItem[]
-    deleteItem: (id: MenuItem["id"]) => void
+    dispatch: Dispatch<OrderActions>
 }
 
-const OrderContents = ({order, deleteItem}: OrderContentsProps) => {
+const OrderContents = ({order, dispatch}: OrderContentsProps) => {
   return (
     
         <div>
@@ -18,7 +20,7 @@ const OrderContents = ({order, deleteItem}: OrderContentsProps) => {
                                 <p>Cantidad: {item.quantity} </p>
                             </div>
                             <button className="bg-red-600 hover:bg-red-900 text-white p-3  cursor-pointer rounded-md"
-                            onClick={()=> deleteItem(item.id)}
+                            onClick={()=> dispatch({type: 'delete-item', payload: {id: item.id}})}
                             >
                                 Eliminar
                             </button>
