@@ -24,7 +24,7 @@ Muestra el subtotal, el monto de la propina y el total final a pagar.
 useState: Para gestionar el estado local de los ítems del menú, el consumo actual, el porcentaje de propina seleccionado y los cálculos.
 useMemo: Utilizado para optimizar el rendimiento de los cálculos (subtotal, propina, total) memoizando los valores y evitando recálculos innecesarios.
 
-🛠️ Custom Hooks: La lógica central de la aplicación, incluyendo la gestión del consumo y los cálculos, está encapsulada en un hook personalizado. Esto fomenta la reutilización de código, mejora la legibilidad y simplifica la mantenibilidad de los componentes.
+🛠️ useReducer: La lógica central de la aplicación, incluyendo la gestión del consumo y los cálculos, está encapsulada en useReducer.
 
 🛡️ Tipado Estricto con TypeScript: Todo el proyecto está completamente tipado con TypeScript, lo que asegura la robustez del código, mejora la experiencia del desarrollador y previene errores comunes en tiempo de desarrollo.
 
